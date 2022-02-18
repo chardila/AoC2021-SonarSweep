@@ -4,11 +4,13 @@ if __name__ == '__main__':
     INPUT_FILE = "inputs/01_sonar_sweep.txt"
 
     with open(INPUT_FILE, "r") as f:
-        depths = f.readlines()
+        file = f.read()
+
+    depths = [int(i) for i in file.split('\n')]
 
     count = 0
     for i in range(len(depths) - 1):
-        if int(depths[i]) < int(depths[i + 1]):
+        if depths[i] < depths[i + 1]:
             count += 1
 
-    print(count)
+    print("Sonar Sweep - Part 1:", count)
