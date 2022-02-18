@@ -4,9 +4,7 @@ if __name__ == '__main__':
     INPUT_FILE = "inputs/01_sonar_sweep.txt"
 
     with open(INPUT_FILE, "r") as f:
-        file = f.read()
-
-    depths = [int(i) for i in file.split('\n')]
+        depths = [int(line) for line in f]
 
     count = 0
     for i in range(len(depths) - 1):
